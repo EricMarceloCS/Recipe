@@ -1,7 +1,9 @@
 package dev.ericmarcelo.recipe.services;
 
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
+import java.util.function.Supplier;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +30,13 @@ public class RecipeServiceImpl implements RecipeService {
 		Set<Recipe> recipeSet = new HashSet<>();
 		recipeRepository.findAll().forEach(recipeSet::add);
 		return recipeSet;
+	}
+	
+	@Override
+	public Recipe findById(Long id) {
+		Optional<Recipe> recipe = recipeRepository.findById(id);
+		
+		return recipe.orElseThrow();
 	}
 
 }
