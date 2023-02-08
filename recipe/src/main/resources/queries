@@ -1,0 +1,6 @@
+select * from category;
+select * from ingredient;
+select * from notes;
+select * from recipe;
+select * from recipe_category;
+select * from unit_of_measure;
