@@ -154,6 +154,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         guacRecipe.setPrepTime(10);
         guacRecipe.setCookTime(0);
         guacRecipe.setDifficulty(Difficulty.EASY);
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("Simply Recipes");
         guacRecipe.setDirections("1 Cut avocado, remove flesh: Cut the avocados in half. Remove seed. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon" +
                 "\n" +
                 "2 Mash with a fork: Using a fork, roughly mash the avocado. (Don't overdo it! The guacamole should be a little chunky.)" +
@@ -166,6 +168,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "\n" +
                 "\n" +
                 "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvpiV9Sd");
+       
 
         Notes guacNotes = new Notes();
         guacNotes.setRecipeNotes("For a very quick guacamole just take a 1/4 cup of salsa and mix it in with your mashed avocados.\n" +
@@ -177,6 +180,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "Read more: http://www.simplyrecipes.com/recipes/perfect_guacamole/#ixzz4jvoun5ws");
 
         guacRecipe.setNotes(guacNotes);
+        guacRecipe.setUrl("http://www.simplyrecipes.com/recipes/perfect_guacamole");
 
         //very redundent - could add helper method, and make this simpler
         guacRecipe.addIngredient(new Ingredient("ripe avocados", new BigDecimal(2), eachUom));
@@ -200,6 +204,8 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
         tacosRecipe.setCookTime(9);
         tacosRecipe.setPrepTime(20);
         tacosRecipe.setDifficulty(Difficulty.MODERATE);
+        tacosRecipe.setServings(4);
+        tacosRecipe.setSource("Simply Recipes");
 
         tacosRecipe.setDirections("1 Prepare a gas or charcoal grill for medium-high, direct heat.\n" +
                 "2 Make the marinade and coat the chicken: In a large bowl, stir together the chili powder, oregano, cumin, sugar, salt, garlic and orange zest. Stir in the orange juice and olive oil to make a loose paste. Add the chicken to the bowl and toss to coat all over.\n" +
@@ -225,6 +231,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                 "Read more: http://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos/#ixzz4jvu7Q0MJ");
 
         tacosRecipe.setNotes(tacoNotes);
+        tacosRecipe.setUrl("http://www.simplyrecipes.com/recipes/spicy_grilled_chicken_tacos");
 
         tacosRecipe.addIngredient(new Ingredient("Ancho Chili Powder", new BigDecimal(2), tableSpoonUom));
         tacosRecipe.addIngredient(new Ingredient("Dried Oregano", new BigDecimal(1), teapoonUom));
