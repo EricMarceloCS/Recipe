@@ -32,7 +32,7 @@ public class IngredientController {
 	}
 	
 	@RequestMapping("recipe/{recipeId}/ingredient/new")
-	public String newRecipe(@PathVariable String recipeId, Model model) {
+	public String newIngredient(@PathVariable String recipeId, Model model) {
 		
 		RecipeCommand recipeCommand = recipeService.findCommandById(Long.valueOf(recipeId));
 		
