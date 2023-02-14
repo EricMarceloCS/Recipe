@@ -12,6 +12,7 @@ import dev.ericmarcelo.recipe.commands.RecipeCommand;
 import dev.ericmarcelo.recipe.converters.RecipeCommandToRecipe;
 import dev.ericmarcelo.recipe.converters.RecipeToRecipeCommand;
 import dev.ericmarcelo.recipe.domain.Recipe;
+import dev.ericmarcelo.recipe.exceptions.NotFoundException;
 import dev.ericmarcelo.recipe.repositories.RecipeRepository;
 import jakarta.transaction.Transactional;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +47,7 @@ public class RecipeServiceImpl implements RecipeService {
 	@Override
 	public Recipe findById(Long id) {
 		Optional<Recipe> recipe = recipeRepository.findById(id);
-		return recipe.orElseThrow();
+		return recipe.orElseThrow(NotFoundException::new);
 	}
 
 	@Override
