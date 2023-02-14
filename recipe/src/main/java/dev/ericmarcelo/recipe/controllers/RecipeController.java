@@ -4,13 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -49,12 +50,16 @@ public class RecipeController {
 		return "recipe/recipeform";
 	}
 	
-	@PostMapping
-	@RequestMapping({"recipe", "/recipe/", "/recipe"})
-	public String saveOrUpdate(@ModelAttribute RecipeCommand recipeCommand, Model model) {
+	@PostMapping({"recipe", "/", "/recipe", "/recipe/"})
+	public String saveOrUpdate(@Validated @ModelAttribute("recipe") RecipeCommand recipeCommand, BindingResult bindingResult) {
+
+		if(bindingResult.hasErrors()) {
+			bindingResult.getAllErrors().forEach(objectError -> log.debug(objectError.toString()));
+			return "recipe/recipeform";
+		}
 		RecipeCommand savedCommand = recipeService.saveRecipeCommand(recipeCommand);
-		model.addAttribute("recipe", recipeService.findById(savedCommand.getId()));
-		return "recipe/show";
+		
+		return "redirect:/recipe/" + savedCommand.getId() + "/show";
 	}
 	
 	@GetMapping
