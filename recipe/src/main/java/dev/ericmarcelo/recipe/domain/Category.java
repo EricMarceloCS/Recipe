@@ -1,7 +1,7 @@
 package dev.ericmarcelo.recipe.domain;
 import java.util.Set;
 
-import  jakarta.persistence.*;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
