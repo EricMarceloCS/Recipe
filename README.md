@@ -18,10 +18,10 @@ My Build:
 Set up:
   
   IDE Java Runtime Environment Java jdk-17.03
-  
-  If necessary: Download and install project lombok from https://projectlombok.org/
 
   clone to local repository
+  
+  * If necessary: Download and install project lombok from https://projectlombok.org/
 
   open project in Recipe/recipe
   
