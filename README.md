@@ -7,6 +7,7 @@ My Build:
 * Advanced Java Programming 
 * Spring Data JPA
 * lombok
+* Maven
 * jakarta persistence
 * jakarta validation
 * Thymeleaf
@@ -18,9 +19,11 @@ Set up:
   
   IDE Java Runtime Environment Java jdk-17.03
   
-  Download and install project lombok from https://projectlombok.org/
+  If necessary: Download and install project lombok from https://projectlombok.org/
 
   clone to local repository
 
   open project in Recipe/recipe
+  
+  run as Spring Boot Project
 
