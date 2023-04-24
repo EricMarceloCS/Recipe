@@ -2,7 +2,7 @@
 
 John Thompson's Udemy Course Spring Framework 5: Beginner to Guru
 
-My Build:
+Technologies:
 
 * Spring Tool Suite
 * Advanced Java Programming 
@@ -18,13 +18,13 @@ My Build:
 
 Set up:
   
-  IDE Java Runtime Environment Java jdk-17.03
+  * IDE Java Runtime Environment Java jdk-17.03
 
-  clone to local repository
+  * clone to local repository
   
-  * If necessary: Download and install project lombok from https://projectlombok.org/
+    (If necessary: Download and install project lombok from https://projectlombok.org/)
 
-  open project in Recipe/recipe
+  * open project in Recipe/recipe
   
-  run as Spring Boot Project
+  * run as Spring Boot Project
 
